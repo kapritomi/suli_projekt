@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="amoba.css">
+    <title>Amőba</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <script>
+        let a = Math.floor(Math.random() * 10);
+        function randomFunction(e){
+            e.innerText = "X"
+        }
+        
+    </script>
+</head>
+<body>
+    <table >
+        <tr>
+            <td id="randomId" onclick="randomFunction(this)" style="border-left: none; border-top: none;"> </td>
+            <td style="border-top: none;"></td>
+            <td style="border-top: none; border-right: none;"></td>
+        </tr>
+        <tr>
+            <td style="border-left: none;"></td>
+            <td></td>
+            <td style="border-right: none;"></td>
+        </tr>
+        <tr>
+            <td style="border-left: none; border-bottom: none;"></td>
+            <td style="border-bottom: none;"></td>
+            <td style="border-bottom: none; border-right: none"></td>
+        </tr>
+    </table>
+</body>
+</html>
