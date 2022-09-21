@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,31 +8,107 @@
     <link rel="stylesheet" href="amoba.css">
     <title>Amőba</title>
     <link rel="icon" type="image/x-icon" href="icon.png">
-    <script>
-        let a = Math.floor(Math.random() * 10);
-        function randomFunction(e){
-            e.innerText = "X"
-        }
-        
-    </script>
 </head>
+
 <body>
-    <table >
+    <table>
         <tr>
-            <td id="randomId" onclick="randomFunction(this)" style="border-left: none; border-top: none;"> </td>
-            <td style="border-top: none;"></td>
-            <td style="border-top: none; border-right: none;"></td>
+            <td id="1" onClick="reply_click(this.id)" style="border-left: none; border-top: none;"></td>
+            <td id="2" onClick="reply_click(this.id)" style="border-top: none;"></td>
+            <td id="3" onClick="reply_click(this.id)" style="border-top: none; border-right: none;"></td>
         </tr>
         <tr>
-            <td style="border-left: none;"></td>
-            <td></td>
-            <td style="border-right: none;"></td>
+            <td id="4" onClick="reply_click(this.id)" style="border-left: none;"></td>
+            <td id="5" onClick="reply_click(this.id)"></td>
+            <td id="6" onClick="reply_click(this.id)" style="border-right: none;"></td>
         </tr>
         <tr>
-            <td style="border-left: none; border-bottom: none;"></td>
-            <td style="border-bottom: none;"></td>
-            <td style="border-bottom: none; border-right: none"></td>
+            <td id="7" onClick="reply_click(this.id)" style="border-left: none; border-bottom: none;"></td>
+            <td id="8" onClick="reply_click(this.id)" style="border-bottom: none;"></td>
+            <td id="9" onClick="reply_click(this.id)" style="border-bottom: none; border-right: none"></td>
         </tr>
     </table>
+
 </body>
+<script>
+    let szam = [];
+
+    function reply_click(clicked_id) {
+        let a = clicked_id;
+        let gep = Math.floor(Math.random() * 9) + 1;
+        if (a == gep) {
+            gep = Math.floor(Math.random() * 9) + 1;
+        }
+
+        for (let item of szam) {
+            if (szam[item] == gep || szam[item] == a) {
+                gep = Math.floor(Math.random() * 9) + 1;
+            }
+        }
+
+
+        szam.push(gep, Number(a));
+        console.log(szam);
+        //---------------------------Gép-------------------------------
+        if (gep == 1) {
+            document.getElementById("1").innerHTML = "O";
+        }
+        if (gep == 2) {
+            document.getElementById("2").innerHTML = "O";
+        }
+        if (gep == 3) {
+            document.getElementById("3").innerHTML = "O";
+        }
+        if (gep == 4) {
+            document.getElementById("4").innerHTML = "O";
+        }
+        if (gep == 5) {
+            document.getElementById("5").innerHTML = "O";
+        }
+        if (gep == 6) {
+            document.getElementById("6").innerHTML = "O";
+        }
+        if (gep == 7) {
+            document.getElementById("7").innerHTML = "O";
+        }
+        if (gep == 8) {
+            document.getElementById("8").innerHTML = "O";
+        }
+        if (gep == 9) {
+            document.getElementById("9").innerHTML = "O";
+        }
+        //---------------------------Játékos----------------------------------
+        if (clicked_id == 1) {
+            document.getElementById("1").innerHTML = "X";
+        }
+        if (clicked_id == 2) {
+            document.getElementById("2").innerHTML = "X";
+        }
+        if (clicked_id == 3) {
+            document.getElementById("3").innerHTML = "X";
+        }
+        if (clicked_id == 4) {
+            document.getElementById("4").innerHTML = "X";
+        }
+        if (clicked_id == 5) {
+            document.getElementById("5").innerHTML = "X";
+        }
+        if (clicked_id == 6) {
+            document.getElementById("6").innerHTML = "X";
+        }
+        if (clicked_id == 7) {
+            document.getElementById("7").innerHTML = "X";
+        }
+        if (clicked_id == 8) {
+            document.getElementById("8").innerHTML = "X";
+        }
+        if (clicked_id == 9) {
+            document.getElementById("9").innerHTML = "X";
+        }
+
+
+
+    }
+</script>
+
 </html>
