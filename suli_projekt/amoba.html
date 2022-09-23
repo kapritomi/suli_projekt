@@ -31,46 +31,46 @@
 
 </body>
 <script>
-    let szamok = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let range = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     function reply_click(clicked_id) {
-        let a = clicked_id;
-        let gep = Math.floor(Math.random() * szamok.length);
+        let player = clicked_id;
+        let pc = Math.floor(Math.random() * range.length);
 
 
-        const index = szamok.indexOf(gep);
+        const index = range.indexOf(pc);
         if (index > -1) {
-            szamok.splice(index, 1);
+            range.splice(index, 1);
         }
 
 
-        console.log(szamok);
+        console.log(range);
 
         //---------------------------Gép-------------------------------
-        if (gep == 1) {
+        if (pc == 1) {
             document.getElementById("1").innerHTML = "O";
         }
-        if (gep == 2) {
+        if (pc == 2) {
             document.getElementById("2").innerHTML = "O";
         }
-        if (gep == 3) {
+        if (pc == 3) {
             document.getElementById("3").innerHTML = "O";
         }
-        if (gep == 4) {
+        if (pc == 4) {
             document.getElementById("4").innerHTML = "O";
         }
-        if (gep == 5) {
+        if (pc == 5) {
             document.getElementById("5").innerHTML = "O";
         }
-        if (gep == 6) {
+        if (pc == 6) {
             document.getElementById("6").innerHTML = "O";
         }
-        if (gep == 7) {
+        if (pc == 7) {
             document.getElementById("7").innerHTML = "O";
         }
-        if (gep == 8) {
+        if (pc == 8) {
             document.getElementById("8").innerHTML = "O";
         }
-        if (gep == 9) {
+        if (pc == 9) {
             document.getElementById("9").innerHTML = "O";
         }
         //---------------------------Játékos----------------------------------
