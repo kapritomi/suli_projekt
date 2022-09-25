@@ -31,78 +31,69 @@
 
 </body>
 <script>
+    
     let range = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let win=[[1,2,3],[4,5,6],[7,8,9],[1,4,7]];
+    let steps={
+        1:"",
+        2:"",
+        3:"",
+        4:"",
+        5:"",
+        6:"",
+        7:"",
+        8:"",
+        9:""}
     function reply_click(clicked_id) {
-        let player = clicked_id;
-        let pc = Math.floor(Math.random() * range.length);
+        console.log(range)
 
+        let human = Number(clicked_id);
+        
+        const index1 = range.indexOf(human);
+        if (index1 > -1) {
+            range.splice(index1, 1);
+            addSymbol(human);
+            
+            let pc = range[Math.floor(Math.random() * range.length)];
+        
 
-        const index = range.indexOf(pc);
-        if (index > -1) {
-            range.splice(index, 1);
-        }
+            const index = range.indexOf(pc);
+            if (index > -1) {
+                range.splice(index, 1);
+            }
+            
 
+            console.log(range);
 
-        console.log(range);
-
-        //---------------------------Gép-------------------------------
-        if (pc == 1) {
-            document.getElementById("1").innerHTML = "O";
+            function addSymbol(player){ 
+                if(player == human){
+                    document.getElementById(player).innerHTML = "X";
+                    steps[player] = "X";
+                }
+                else{
+                    document.getElementById(player).innerHTML = "O";
+                    steps[player] = "O";
+                }
+                
+            }
+            setTimeout(() => {
+                addSymbol(pc)
+                console.log(steps)
+            }, "250")
         }
-        if (pc == 2) {
-            document.getElementById("2").innerHTML = "O";
-        }
-        if (pc == 3) {
-            document.getElementById("3").innerHTML = "O";
-        }
-        if (pc == 4) {
-            document.getElementById("4").innerHTML = "O";
-        }
-        if (pc == 5) {
-            document.getElementById("5").innerHTML = "O";
-        }
-        if (pc == 6) {
-            document.getElementById("6").innerHTML = "O";
-        }
-        if (pc == 7) {
-            document.getElementById("7").innerHTML = "O";
-        }
-        if (pc == 8) {
-            document.getElementById("8").innerHTML = "O";
-        }
-        if (pc == 9) {
-            document.getElementById("9").innerHTML = "O";
-        }
-        //---------------------------Játékos----------------------------------
-        if (clicked_id == 1) {
-            document.getElementById("1").innerHTML = "X";
-        }
-        if (clicked_id == 2) {
-            document.getElementById("2").innerHTML = "X";
-        }
-        if (clicked_id == 3) {
-            document.getElementById("3").innerHTML = "X";
-        }
-        if (clicked_id == 4) {
-            document.getElementById("4").innerHTML = "X";
-        }
-        if (clicked_id == 5) {
-            document.getElementById("5").innerHTML = "X";
-        }
-        if (clicked_id == 6) {
-            document.getElementById("6").innerHTML = "X";
-        }
-        if (clicked_id == 7) {
-            document.getElementById("7").innerHTML = "X";
-        }
-        if (clicked_id == 8) {
-            document.getElementById("8").innerHTML = "X";
-        }
-        if (clicked_id == 9) {
-            document.getElementById("9").innerHTML = "X";
-        }
+            
 
     }
+
+    function check_winner(steps){
+        for (let item in steps) {
+            
+                
+        }
+    }
+    
+    
+
 </script>
 
 </html>
