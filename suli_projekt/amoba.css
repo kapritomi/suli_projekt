@@ -2,6 +2,11 @@
     padding: 0;
     margin: 0;
 }
+body{
+    background-color: #609ea1;
+    color: white;
+    overflow-x: hidden;
+}
 table{
     margin-left: auto;
     margin-right: auto;
@@ -9,10 +14,20 @@ table{
     border-collapse: collapse;
 }
 td{
-border: 3px solid black;
-width: 100px;
-height: 100px;
-text-align: center;
-font-size: 80px;
-font-family:sans-serif;
+    border: 3px solid #deb887;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 80px;
+    font-family:sans-serif;
+}
+hr{
+    transform: rotate(45deg);
+    color: black;
+    margin: 20px -20px 20px;
+    border: 10px solid green;
+    border-radius: 5px;
+}
+.row{
+    text-align: center;
 }
