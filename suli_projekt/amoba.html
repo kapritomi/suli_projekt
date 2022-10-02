@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="amoba.css">
     <title>Amőba</title>
     <link rel="icon" type="image/x-icon" href="icon.png">
-
 </head>
 
 <body>
@@ -37,100 +36,9 @@
         </tr>
     </table>
     <div class="row">
-        <h1 class="col-sm-6 player" onclick="reset()">New Game</h1>
+        <h1 class="col-sm-6 reset" onclick="reset()">New Game</h1>
     </div>
-
+          
 </body>
-<script>
-
-    let range = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let jatekos = 0;
-    let gep = 0;
-    let steps = {
-        1: "",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: "",
-        7: "",
-        8: "",
-        9: ""
-    }
-    function reply_click(clicked_id) {
-        console.log(range)
-
-        let human = Number(clicked_id);
-
-        const index1 = range.indexOf(human);
-        if (index1 > -1) {
-            range.splice(index1, 1);
-            addSymbol(human);
-
-            let pc = range[Math.floor(Math.random() * range.length)];
-
-            const index = range.indexOf(pc);
-            if (index > -1) {
-                range.splice(index, 1);
-            }
-
-            console.log(range);
-
-            function addSymbol(player) {
-                if (player == human) {
-                    document.getElementById(player).innerHTML = "X";
-                    steps[player] = "X";
-                }
-                else {
-                    document.getElementById(player).innerHTML = "O";
-                    steps[player] = "O";
-                }
-            }
-
-            setTimeout(() => {
-                addSymbol(pc)
-                console.log(steps)
-                if (steps[1] == "X" && steps[2] == "X" && steps[3] == "X" ||
-                    steps[4] == "X" && steps[5] == "X" && steps[6] == "X" ||
-                    steps[7] == "X" && steps[8] == "X" && steps[9] == "X" ||
-                    steps[1] == "X" && steps[4] == "X" && steps[7] == "X" ||
-                    steps[2] == "X" && steps[5] == "X" && steps[8] == "X" ||
-                    steps[3] == "X" && steps[6] == "X" && steps[9] == "X" ||
-                    steps[1] == "X" && steps[5] == "X" && steps[9] == "X" ||
-                    steps[3] == "X" && steps[5] == "X" && steps[7] == "X") {
-                    jatekos++;
-                    document.getElementById("player").innerHTML = jatekos;
-                    alert("Játékos nyert")
-                    reset();
-                }
-                else if (steps[1] == "O" && steps[2] == "O" && steps[3] == "O" ||
-                    steps[4] == "O" && steps[5] == "O" && steps[6] == "O" ||
-                    steps[7] == "O" && steps[8] == "O" && steps[9] == "O" ||
-                    steps[1] == "O" && steps[4] == "O" && steps[7] == "O" ||
-                    steps[2] == "O" && steps[5] == "O" && steps[8] == "O" ||
-                    steps[3] == "O" && steps[6] == "O" && steps[9] == "O" ||
-                    steps[1] == "O" && steps[5] == "O" && steps[9] == "O" ||
-                    steps[3] == "O" && steps[5] == "O" && steps[7] == "O") {
-                    gep++;
-                    document.getElementById("pc").innerHTML = gep;
-                    alert("Gép nyert")
-                    reset();
-                }
-
-            }, "250")
-
-        }
-
-    }
-
-    function reset() {
-        for (let i = 1; i < 10; i++) {
-            document.getElementById(i).innerHTML = "";
-            range.push(i);
-        }
-        steps = { 1: "", 2: "", 3: "", 4: "", 5: "", 6: "", 7: "", 8: "", 9: "" }
-    }
-
-</script>
-
+<script src="amoba.js"></script>
 </html>
