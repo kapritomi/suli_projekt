@@ -136,3 +136,17 @@ function reset() {
     }
     steps = { 1: "", 2: "", 3: "", 4: "", 5: "", 6: "", 7: "", 8: "", 9: "" }
 }
+function newgame(){
+    range = []
+    for (let i = 1; i < 10; i++) {
+        document.getElementById(i).innerHTML = "";
+        range.push(i);
+    }
+    steps = { 1: "", 2: "", 3: "", 4: "", 5: "", 6: "", 7: "", 8: "", 9: "" }
+    jatekos = 0;
+    gep = 0;
+    draw = 0;
+    document.getElementById("pc").innerHTML = "";
+    document.getElementById("player").innerHTML = "";
+    document.getElementById("draw").innerHTML = "";
+}
